@@ -64,4 +64,9 @@ public class QuizController {
         return new ResponseEntity<>(service.updateQuizPartialById(id, update), HttpStatus.OK);
     }
 
+    @PostMapping("/assignQuestion/{questionId}/toQuiz/{quizId}")
+    public ResponseEntity<QuizDto> assignQuestionToQuizDto(@PathVariable Long questionId, @PathVariable Long quizId) {
+        return new ResponseEntity<>(service.assignQuestionToQuiz(questionId, quizId), HttpStatus.OK);
+    }
+
 }

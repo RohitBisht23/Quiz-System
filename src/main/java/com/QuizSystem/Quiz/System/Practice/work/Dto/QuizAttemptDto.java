@@ -8,14 +8,16 @@ import lombok.Setter;
 
 import java.util.List;
 
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Setter
-@Getter
-public class QuestionDto {
-    private Long id;
-    private String questionText;
-    private QuizDto quizId;
+public class QuizAttemptDto {
 
-    private List<QuestionOptionDto> options;
+    private Long id;
+    private Long userId;
+    private Long quizId;
+    private int totalScore;
+    private String status;
+    private List<QuizResponseDto> responses;
 }

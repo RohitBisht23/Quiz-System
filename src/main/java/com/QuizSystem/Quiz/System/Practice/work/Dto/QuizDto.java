@@ -1,8 +1,11 @@
 package com.QuizSystem.Quiz.System.Practice.work.Dto;
 
 
+import com.QuizSystem.Quiz.System.Practice.work.Entity.Question;
 import jakarta.validation.constraints.*;
 import lombok.*;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -22,4 +25,6 @@ public class QuizDto {
     @Min(value = 1, message = "Duration must be at least 1 minute")
     @Max(value = 180, message = "Duration cannot exceed 180 minutes")
     private int duration;
+
+    private List<QuestionDto> questions;
 }

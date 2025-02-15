@@ -18,4 +18,6 @@ public interface QuizService {
     boolean deleteQuizById(Long id);
 
     QuizDto updateQuizPartialById(Long id, Map<String, Object> update);
+
+    QuizDto assignQuestionToQuiz(Long questionId, Long quizId);
 }

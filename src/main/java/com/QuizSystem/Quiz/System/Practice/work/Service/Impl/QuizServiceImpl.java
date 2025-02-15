@@ -2,8 +2,10 @@ package com.QuizSystem.Quiz.System.Practice.work.Service.Impl;
 
 
 import com.QuizSystem.Quiz.System.Practice.work.Dto.QuizDto;
+import com.QuizSystem.Quiz.System.Practice.work.Entity.Question;
 import com.QuizSystem.Quiz.System.Practice.work.Entity.Quiz;
 import com.QuizSystem.Quiz.System.Practice.work.Exception.ResourceNotFoundException;
+import com.QuizSystem.Quiz.System.Practice.work.Repository.QuestionRepository;
 import com.QuizSystem.Quiz.System.Practice.work.Repository.QuizRepository;
 import com.QuizSystem.Quiz.System.Practice.work.Service.QuizService;
 import lombok.RequiredArgsConstructor;
@@ -22,6 +24,7 @@ public class QuizServiceImpl implements QuizService {
 
     private final QuizRepository repository;
     private final ModelMapper mapper;
+    private  final QuestionRepository questionRepository;
 
     @Override
     public QuizDto createNewQuiz(QuizDto dto) {
@@ -98,6 +101,25 @@ public class QuizServiceImpl implements QuizService {
         Quiz employeeEntityToBeSaved = repository.save(quiz);
         return mapper.map(employeeEntityToBeSaved, QuizDto.class);
     }
+
+    @Override
+    public QuizDto assignQuestionToQuiz(Long questionId, Long quizId) {
+        Quiz quiz = repository.findById(quizId).orElse(null);
+        if (quiz == null) {
+            throw new ResourceNotFoundException("No resources found for Quiz ID: " + quizId);
+        }
+
+        Question question = questionRepository.findById(questionId).orElse(null);
+        if (question == null) {
+            throw new ResourceNotFoundException("No resources found for Question ID: " + questionId);
+        }
+
+        question.setQuiz(quiz); // Assigning the quiz to the question
+        questionRepository.save(question); // Saving updated question
+
+        return mapper.map(quiz, QuizDto.class);
+    }
+
 
 
 }
