@@ -20,4 +20,5 @@ public interface QuizService {
     QuizDto updateQuizPartialById(Long id, Map<String, Object> update);
 
     QuizDto assignQuestionToQuiz(Long questionId, Long quizId);
+
 }

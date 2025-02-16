@@ -1,6 +1,7 @@
 package com.QuizSystem.Quiz.System.Practice.work.Entity;
 
 
+import com.QuizSystem.Quiz.System.Practice.work.Entity.Enum.QuizAttempEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,7 +30,7 @@ public class QuizAttempt {
     private Quiz quiz;
 
     private int totalScore;
-    private String status;
+    private QuizAttempEnum status;
 
     @OneToMany(mappedBy = "quizAttempt", cascade = CascadeType.ALL)
     private List<QuizResponse> responses;

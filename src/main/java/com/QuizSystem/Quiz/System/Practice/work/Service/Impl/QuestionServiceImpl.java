@@ -31,7 +31,7 @@ public class QuestionServiceImpl implements QuestionService {
             throw new RunTimeConflictException("Question already exists");
         }
 
-        Question question = mapper.map(questionDto, Question.class);
+        Question question = mapper.map(newQuestion, Question.class);
 
         // Assign quiz if quizId is provided
         if (quizId != null) {

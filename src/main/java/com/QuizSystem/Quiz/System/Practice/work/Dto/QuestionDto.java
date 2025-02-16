@@ -17,5 +17,5 @@ public class QuestionDto {
     private String questionText;
     private QuizDto quizId;
 
-    private List<QuestionOptionDto> options;
+    private QuestionOptionDto options;
 }

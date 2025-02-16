@@ -14,5 +14,8 @@ public class QuestionOptionDto {
     private Long id;
     private String optionText;
     private boolean isCorrect;
-    private QuestionDto questionId;
+    private String optionA;
+    private String optionB;
+    private String optionC;
+    private String optionD;
 }

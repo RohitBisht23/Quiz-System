@@ -1,6 +1,7 @@
 package com.QuizSystem.Quiz.System.Practice.work.Dto;
 
 
+import com.QuizSystem.Quiz.System.Practice.work.Entity.Enum.QuizAttempEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,6 +19,6 @@ public class QuizAttemptDto {
     private Long userId;
     private Long quizId;
     private int totalScore;
-    private String status;
+    private QuizAttempEnum status;
     private List<QuizResponseDto> responses;
 }

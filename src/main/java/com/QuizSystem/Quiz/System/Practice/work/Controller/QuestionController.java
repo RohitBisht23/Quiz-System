@@ -2,7 +2,6 @@ package com.QuizSystem.Quiz.System.Practice.work.Controller;
 
 
 import com.QuizSystem.Quiz.System.Practice.work.Dto.QuestionDto;
-import com.QuizSystem.Quiz.System.Practice.work.Entity.Question;
 import com.QuizSystem.Quiz.System.Practice.work.Service.QuestionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

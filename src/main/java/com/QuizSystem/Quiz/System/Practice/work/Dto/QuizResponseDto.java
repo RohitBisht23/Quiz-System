@@ -11,10 +11,11 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class QuizResponseDto {
-    private Long id;
-    private Long quizAttemptId;
-    private Long questionId;
-    private String selectedOption;
-    private boolean isCorrect;
-    private int score;
+    private Long id;               // Response ID
+    private Long questionId;       // Associated Question
+    private String selectedOption; // Chosen Answer
+    private boolean correct;       // True if correct
+    private int score;             // Points for this response
+    private Long quizAttemptId;    // Associated Quiz Attempt
+    private Long quizId;           // Optional: ID of the Quiz
 }

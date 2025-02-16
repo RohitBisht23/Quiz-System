@@ -28,4 +28,7 @@ public class Quiz {
     @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL)
     private List<QuizAttempt> attempts;
 
+    @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL)
+    private List<QuizResponse> quizResponses;
+
 }

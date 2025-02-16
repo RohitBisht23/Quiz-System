@@ -29,4 +29,9 @@ public class QuizResponse {
     private String selectedOption;
     private boolean isCorrect;
     private int score;
+
+    @ManyToOne
+    @JoinColumn(name = "quiz_id", nullable = false)
+    private Quiz quiz;
+
 }

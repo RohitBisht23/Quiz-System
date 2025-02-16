@@ -27,4 +27,6 @@ public class QuizDto {
     private int duration;
 
     private List<QuestionDto> questions;
+
+    private List<QuizResponseDto> responses;
 }
